@@ -10,6 +10,8 @@ class Review extends Model
 {
     use HasFactory;
 
+    protected $guarded = [ 'id' ];
+
 //    Relación uno a muchos inversa
     public function user(): BelongsTo
     {

@@ -79,10 +79,25 @@ class User extends Authenticatable
         return $this->hasMany( Review::class );
     }
 
+    public function comments(): HasMany
+    {
+        return $this->hasMany( Comment::class );
+    }
+
+    public function reactions(): HasMany
+    {
+        return $this->hasMany( Reaction::class );
+    }
+
 //    Relación muchos a muchos
     public function coursesEnrolled(): BelongsToMany
     {
         return $this->belongsToMany( Course::class );
+    }
+
+    public function lessons(): BelongsToMany
+    {
+        return $this->belongsToMany( Lesson::class );
     }
 
 

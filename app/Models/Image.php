@@ -4,17 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
-class Price extends Model
+class Image extends Model
 {
     use HasFactory;
 
     protected $guarded = [ 'id' ];
 
-//    Relación uno a muchos
-    public function course(): HasMany
+    public function imageable(): MorphTo
     {
-        return $this->hasMany( Course::class );
+        return $this->morphTo();
     }
 }

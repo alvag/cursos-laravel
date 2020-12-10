@@ -7,10 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Course extends Model
 {
     use HasFactory;
+
+    protected $guarded = [ 'id', 'status' ];
 
     const DRAFT = 1;
     const REVIEW = 2;
@@ -47,5 +51,37 @@ class Course extends Model
     public function reviews(): HasMany
     {
         return $this->hasMany( Review::class );
+    }
+
+    public function requirements(): HasMany
+    {
+        return $this->hasMany( Requirement::class );
+    }
+
+    public function goals(): HasMany
+    {
+        return $this->hasMany( Goal::class );
+    }
+
+    public function audiences(): HasMany
+    {
+        return $this->hasMany( Audience::class );
+    }
+
+    public function sections(): HasMany
+    {
+        return $this->hasMany( Section::class );
+    }
+
+//    Relación uno a uno polimorfica
+    public function image(): MorphOne
+    {
+        return $this->morphOne( Image::class, 'imageable' );
+    }
+
+
+    public function lessons(): HasManyThrough
+    {
+        return $this->hasManyThrough( Lesson::class, Section::class );
     }
 }

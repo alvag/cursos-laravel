@@ -27,9 +27,6 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger( 'level_id' )->nullable();
             $table->unsignedBigInteger( 'category_id' )->nullable();
             $table->unsignedBigInteger( 'price_id' )->nullable();
-//            $table->unsignedBigInteger( 'requirement_id' );
-//            $table->unsignedBigInteger( 'audience_id' );
-//            $table->unsignedBigInteger( 'section_id' );
 
             $table->foreign( 'user_id' )->references( 'id' )->on( 'users' )->onDelete( 'cascade' );
             $table->foreign( 'level_id' )->references( 'id' )->on( 'levels' )->onDelete( 'set null' );
