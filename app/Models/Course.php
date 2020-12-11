@@ -82,6 +82,11 @@ class Course extends Model
         return $this->reviews_count ? round( $this->reviews->avg( 'rating' ), 1 ) : 5;
     }
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
 //    Relación uno a muchos inversa
     public function teacher(): BelongsTo
     {
