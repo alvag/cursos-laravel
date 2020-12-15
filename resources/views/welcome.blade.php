@@ -80,7 +80,7 @@
             <p class="text-center">Digígete al catálogo de cursos y fíltralos por categoría o nivel</p>
 
             <div class="flex justify-center mt-4">
-                <a href="{{route('course.index')}}"
+                <a href="{{route('courses.index')}}"
                    class="bg-blue-500 text-white font-semibold rounded hover:bg-blue-700 py-2 px-4 ">
                     Catálogo de cursos
                 </a>
@@ -129,7 +129,7 @@
                                 </p>
                             </div>
 
-                            <a href="{{route('course.show', $course)}}"
+                            <a href="{{route('courses.show', $course)}}"
                                class="w-full mt-4 py-2 px-4 block text-center bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
                                 Más información
                             </a>
