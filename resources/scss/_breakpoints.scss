@@ -1,0 +1,55 @@
+// sm
+@mixin min-width-640 {
+    @media (min-width: 640px) {
+        @content;
+    }
+}
+
+// md
+@mixin min-width-768 {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+// lg
+@mixin min-width-1024 {
+    @media (min-width: 1024px) {
+        @content;
+    }
+}
+
+// xl
+@mixin min-width-1280 {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+// 2xl
+@mixin min-width-1536 {
+    @media (min-width: 1536px) {
+        @content;
+    }
+}
+
+
+@mixin for-min-width($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin for-max-width($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+// media query for IE10+
+@mixin for-ie {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+

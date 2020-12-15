@@ -11,7 +11,7 @@ use Livewire\WithPagination;
 class CourseIndex extends Component
 {
     use WithPagination;
-    
+
     public $category_id;
     public $level_id;
 

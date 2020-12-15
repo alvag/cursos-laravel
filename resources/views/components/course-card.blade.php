@@ -1,10 +1,10 @@
 @props(['course'])
 
-<article class="bg-white shadow-lg rounded overflow-hidden">
+<article class="card">
     <img class="h-36 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">
 
-    <div class="px-6 py-4">
-        <h1 class="text-xl text-gray-700 mb-2 leading-6">
+    <div class="card-body">
+        <h1 class="card-title">
             {{Str::limit($course->title, 40)}}
         </h1>
 
@@ -36,7 +36,7 @@
         </div>
 
         <a href="{{route('courses.show', $course)}}"
-           class="w-full mt-4 py-2 px-4 block text-center bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+           class="btn-block mt-4 btn btn-primary">
             Más información
         </a>
 

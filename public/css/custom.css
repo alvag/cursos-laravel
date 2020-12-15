@@ -1,3 +1,90 @@
+.card {
+  --bg-opacity: 1;
+  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 0.25rem;
+  overflow: hidden
+}
+
+.card-body {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  --text-opacity: 1;
+  color: #374151;
+  color: rgba(55, 65, 81, var(--text-opacity));
+  margin-bottom: 0.5rem;
+  line-height: 1.5rem;
+}
+.container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+.btn {
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-primary {
+  --bg-opacity: 1;
+  background-color: #3f83f8;
+  background-color: rgba(63, 131, 248, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #ffffff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.btn-primary:hover {
+  --bg-opacity: 1;
+  background-color: #1a56db;
+  background-color: rgba(26, 86, 219, var(--bg-opacity));
+}
+
+.btn-danger {
+  --bg-opacity: 1;
+  background-color: #f05252;
+  background-color: rgba(240, 82, 82, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #ffffff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.btn-danger:hover {
+  --bg-opacity: 1;
+  background-color: #c81e1e;
+  background-color: rgba(200, 30, 30, var(--bg-opacity));
+}
+
+.btn-block {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
 .welcome h1 {
   line-height: 1;
 }

@@ -3,11 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="e5e5bd1f-e5c1-4df6-874e-423a0c9581eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CourseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CourseIndex.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CourseIndex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/courses.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/_courses.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/custom.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/scss/welcome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/scss/_welcome.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/course-card.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/course-card.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/course-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/course-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/navigation-dropdown.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +32,7 @@
       <list>
         <option value="composer.json" />
         <option value="SCSS File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -175,16 +185,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/courses" />
-    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/scss" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\cursos\public\img\courses" />
       <recent name="C:\xampp\htdocs\cursos\resources\scss" />
+      <recent name="C:\xampp\htdocs\cursos\public\img\courses" />
       <recent name="C:\xampp\htdocs\cursos\resources\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -227,7 +237,7 @@
       <updated>1607558939601</updated>
       <workItem from="1607558941979" duration="8884000" />
       <workItem from="1607629782119" duration="22988000" />
-      <workItem from="1608052440462" duration="7655000" />
+      <workItem from="1608052440462" duration="11311000" />
     </task>
     <servers />
   </component>
