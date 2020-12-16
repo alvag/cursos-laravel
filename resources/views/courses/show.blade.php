@@ -111,7 +111,20 @@
                         </div>
                     </div>
 
-                    <a href="" class="btn btn-danger btn-block mt-4">Llevar este curso</a>
+                    @can('enrolled', $course)
+
+                        <a href="{{route('courses.status', $course)}}"
+                           class="btn btn-danger btn-block mt-4 focus:outline-none">Continuar con el curso</a>
+                    @else
+
+                        <form action="{{route('courses.enrolled', $course)}}" method="post">
+                            @csrf
+                            <button type="submit" class="btn btn-danger btn-block mt-4 focus:outline-none">Llevar este
+                                curso
+                            </button>
+
+                        </form>
+                    @endcan
                 </div>
             </section>
 
