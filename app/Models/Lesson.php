@@ -35,14 +35,14 @@ use Illuminate\Database\Eloquent\Relations\MorphOne;
  * @method static \Illuminate\Database\Eloquent\Builder|Lesson newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Lesson newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Lesson query()
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereIframe($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson wherePlatformId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereSectionId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereCreatedAt( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereId( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereIframe( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereName( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson wherePlatformId( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereSectionId( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereUpdatedAt( $value )
+ * @method static \Illuminate\Database\Eloquent\Builder|Lesson whereUrl( $value )
  * @mixin \Eloquent
  */
 class Lesson extends Model
@@ -50,6 +50,11 @@ class Lesson extends Model
     use HasFactory;
 
     protected $guarded = [ 'id' ];
+
+    public function getCompletedAttribute(): bool
+    {
+        return $this->users->contains( auth()->user()->id );
+    }
 
     //    Relación uno a muchos inversa
     public function section(): BelongsToMany

@@ -101,3 +101,18 @@
   background-image: url(/images/code-1839406_1920.jpg?a1e7089ef569e29428f8dc0c5fc0c65b);
 }
 
+.embed-responsive {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+}
+
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
