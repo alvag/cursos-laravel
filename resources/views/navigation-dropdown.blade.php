@@ -70,8 +70,12 @@
                                 {{ __('Manage Account') }}
                             </div>
 
+                            <x-jet-dropdown-link href="{{ route('instructor.courses.index') }}">
+                                Instructor
+                            </x-jet-dropdown-link>
+
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                Perfil
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -120,7 +124,7 @@
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                                      onclick="event.preventDefault();
                                                             this.closest('form').submit();">
-                                    {{ __('Logout') }}
+                                    Cerrar Sesión
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -178,9 +182,14 @@
 
                 <div class="mt-3 space-y-1">
                     <!-- Account Management -->
+                    <x-jet-responsive-nav-link href="{{ route('instructor.courses.index') }}"
+                                               :active="request()->routeIs('instructor.courses.index')">
+                        Instructor
+                    </x-jet-responsive-nav-link>
+
                     <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                                                :active="request()->routeIs('profile.show')">
-                        {{ __('Profile') }}
+                        Perfil
                     </x-jet-responsive-nav-link>
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -197,7 +206,7 @@
                         <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                                    onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                            {{ __('Logout') }}
+                            Cerrar Sesión
                         </x-jet-responsive-nav-link>
                     </form>
 
