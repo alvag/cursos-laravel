@@ -188,7 +188,7 @@ return [
 
     'use_route_url' => false,
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
 
     'logout_url' => 'logout',
 
@@ -242,11 +242,14 @@ return [
             'can' => 'manage-blog',
         ],
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'text' => 'Dashboard',
+            'route' => 'admin.home',
+            'icon' => 'fas fa-fw fa-tachometer-alt',
+        ],
+        [
+            'text' => 'Lista de Roles',
+            'route' => 'admin.roles.index',
+            'icon' => 'fas fa-fw fa-user-cog',
         ],
         [ 'header' => 'account_settings' ],
         [

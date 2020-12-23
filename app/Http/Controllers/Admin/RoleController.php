@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
@@ -19,7 +22,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view( 'admin.roles.index' );
+        $roles = Role::all();
+
+        return view( 'admin.roles.index', compact( 'roles' ) );
     }
 
     /**
@@ -29,18 +34,29 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view( 'admin.roles.create' );
+        $permissions = Permission::all();
+
+        return view( 'admin.roles.create', compact( 'permissions' ) );
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse
      */
-    public function store( Request $request )
+    public function store( Request $request ): RedirectResponse
     {
-        //
+        $request->validate( [
+            'name' => 'required',
+            'permissions' => 'required'
+        ] );
+
+        $role = Role::create( [ 'name' => $request->name ] );
+
+        $role->permissions()->attach( $request->permissions );
+
+        return redirect()->route( 'admin.roles.index' )->with( 'info', 'El rol se creó satisfactoriamente' );
     }
 
     /**
@@ -62,7 +78,9 @@ class RoleController extends Controller
      */
     public function edit( Role $role )
     {
-        return view( 'admin.roles.edit', compact( 'role' ) );
+        $permissions = Permission::all();
+
+        return view( 'admin.roles.edit', compact( 'role', 'permissions' ) );
     }
 
     /**
@@ -70,21 +88,30 @@ class RoleController extends Controller
      *
      * @param Request $request
      * @param Role $role
-     * @return Response
+     * @return RedirectResponse
      */
-    public function update( Request $request, Role $role )
+    public function update( Request $request, Role $role ): RedirectResponse
     {
-        //
+        $request->validate( [
+            'name' => 'required',
+            'permissions' => 'required'
+        ] );
+
+        $role->permissions()->sync( $request->permissions );
+
+        return redirect()->route( 'admin.roles.edit', $role );
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param Role $role
-     * @return Response
+     * @return RedirectResponse
+     * @throws Exception
      */
-    public function destroy( Role $role )
+    public function destroy( Role $role ): RedirectResponse
     {
-        //
+        $role->delete();
+        return redirect()->route( 'admin.roles.index' )->with( 'info', 'El rol se eleminó con éxito' );
     }
 }
