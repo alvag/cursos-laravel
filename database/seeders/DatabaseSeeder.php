@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         Storage::deleteDirectory( 'courses' );
         Storage::makeDirectory( 'courses' );
 
+        $this->call( PermissionSeeder::class );
+        $this->call( RoleSeeder::class );
         $this->call( UserSeeder::class );
         $this->call( LevelSeeder::class );
         $this->call( CategorySeeder::class );
