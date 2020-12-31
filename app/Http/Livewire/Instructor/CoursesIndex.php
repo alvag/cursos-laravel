@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Instructor;
 
 use App\Models\Course;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class InstructorCourse extends Component
+class CoursesIndex extends Component
 {
     use WithPagination;
 
@@ -18,7 +18,7 @@ class InstructorCourse extends Component
             ->where( 'title', 'LIKE', '%' . $this->search . '%' )
             ->paginate( 8 );
 
-        return view( 'livewire.instructor-course', compact( 'courses' ) );
+        return view( 'livewire.instructor.courses-index', compact( 'courses' ) );
     }
 
     public function clearPage()

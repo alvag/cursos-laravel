@@ -3,8 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="e5e5bd1f-e5c1-4df6-874e-423a0c9581eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/InstructorCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/InstructorCourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/instructor-course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/instructor-course.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/AdminUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Admin/UsersIndex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/CourseIndex.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/CoursesIndex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/InstructorCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Instructor/CoursesIndex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/courses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/courses/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/admin-users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/admin/users-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/course-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/courses-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/instructor-course.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/instructor/courses-index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/instructor.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/instructor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,10 +180,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin/users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/instructor/courses" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -183,13 +192,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cursos\resources\views\instructor\courses" />
       <recent name="C:\xampp\htdocs\cursos\resources\views\admin\users" />
       <recent name="C:\xampp\htdocs\cursos\resources\views\admin\role" />
       <recent name="C:\xampp\htdocs\cursos\resources\scss" />
       <recent name="C:\xampp\htdocs\cursos\public\img\courses" />
-      <recent name="C:\xampp\htdocs\cursos\resources\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\cursos\resources\views\livewire\admin" />
+      <recent name="C:\xampp\htdocs\cursos\app\Http\Livewire\Admin" />
+      <recent name="C:\xampp\htdocs\cursos\resources\views\livewire\instructor" />
+      <recent name="C:\xampp\htdocs\cursos\app\Http\Livewire\Instructor" />
       <recent name="C:\xampp\htdocs\cursos\resources\scss" />
     </key>
   </component>
@@ -237,7 +250,7 @@
       <workItem from="1608732839613" duration="2672000" />
       <workItem from="1608741112598" duration="11269000" />
       <workItem from="1609358358258" duration="628000" />
-      <workItem from="1609423293391" duration="5791000" />
+      <workItem from="1609423293391" duration="8835000" />
     </task>
     <servers />
   </component>
