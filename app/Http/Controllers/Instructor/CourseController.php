@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Instructor;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Course;
+use App\Models\Level;
+use App\Models\Price;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -35,7 +38,7 @@ class CourseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @return Response
      */
     public function store( Request $request )
@@ -57,22 +60,26 @@ class CourseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     * @return Response
+     * @param $id
+     * @return Application|Factory|View|Response
      */
-    public function edit( Course $course )
+    public function edit( $id )
     {
-        return view( 'instructor.courses.edit', compact( 'course' ) );
+        $course = Course::findOrFail( $id );
+        $categories = Category::pluck( 'name', 'id' );
+        $levels = Level::pluck( 'name', 'id' );
+        $prices = Price::pluck( 'name', 'id' );
+        return view( 'instructor.courses.edit', compact( 'course', 'categories', 'levels', 'prices' ) );
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param Request $request
+     * @param Course $course
      * @return Response
      */
-    public function update( Request $request, $id )
+    public function update( Request $request, Course $course )
     {
         //
     }
@@ -80,7 +87,7 @@ class CourseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param Course $course
      * @return Response
      */
     public function destroy( Course $course )

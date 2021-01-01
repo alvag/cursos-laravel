@@ -24,7 +24,7 @@ class CoursesIndex extends Component
         $categories = Category::all();
         $levels = Level::all();
 
-        return view( 'livewire.instructor.courses-index', compact( 'courses', 'categories', 'levels' ) );
+        return view( 'livewire.courses-index', compact( 'courses', 'categories', 'levels' ) );
     }
 
     public function resetFilters()
