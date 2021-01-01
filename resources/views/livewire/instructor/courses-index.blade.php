@@ -1,9 +1,11 @@
 <div class="container py-8">
     <x-table-responsive>
 
-        <div class="px-6 py-4">
-            <input type="text" class="form-input w-full shadow-sm" placeholder="Buscar..."
+        <div class="px-6 py-4 flex">
+            <input type="text" class="form-input flex-1 shadow-sm" placeholder="Buscar..."
                    wire:model="search" wire:keydown="clearPage">
+
+            <a class="btn btn-danger px-2 ml-2" href="{{route('instructor.courses.create')}}">Crear nuevo curso</a>
         </div>
 
         @if($courses->count())
