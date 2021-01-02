@@ -1,21 +1,37 @@
 <div class="mb-4">
     {!! Form::label('title', 'Título del curso:') !!}
-    {!! Form::text('title', null, ['class' => 'form-input block w-full mt-1']) !!}
+    {!! Form::text('title', null, ['class' => 'form-input block w-full mt-1' . ($errors->has('title') ? ' border-red-600' : '')]) !!}
+
+    @error('title')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+    @enderror
 </div>
 
 <div class="mb-4">
     {!! Form::label('slug', 'Slug:') !!}
-    {!! Form::text('slug', null, ['class' => 'form-input block w-full mt-1']) !!}
+    {!! Form::text('slug', null, ['readonly' => 'readonly', 'class' => 'form-input block w-full mt-1' . ($errors->has('slug') ? ' border-red-600' : '')]) !!}
+
+    @error('slug')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+    @enderror
 </div>
 
 <div class="mb-4">
     {!! Form::label('subtitle', 'Subtítulo:') !!}
-    {!! Form::text('subtitle', null, ['class' => 'form-input block w-full mt-1']) !!}
+    {!! Form::text('subtitle', null, ['class' => 'form-input block w-full mt-1' . ($errors->has('subtitle') ? ' border-red-600' : '')]) !!}
+
+    @error('subtitle')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+    @enderror
 </div>
 
 <div class="mb-4">
     {!! Form::label('description', 'Descripción:') !!}
-    {!! Form::textarea('description', null, ['class' => 'form-input block w-full mt-1']) !!}
+    {!! Form::textarea('description', null, ['class' => 'form-input block w-full mt-1' . ($errors->has('description') ? ' border-red-600' : '')]) !!}
+
+    @error('description')
+    <strong class="text-xs text-red-600">{{$message}}</strong>
+    @enderror
 </div>
 
 <div class="grid grid-cols-3 gap-4">
@@ -37,12 +53,12 @@
 
 <div class="grid grid-cols-2 gap-4">
     <figure>
-        @isset($course)
+        @isset($course->image)
             <img id="picture" class="w-full h-64 object-cover object-center"
                  src="{{Storage::url($course->image->url)}}" alt="">
         @else
             <img id="picture" class="w-full h-64 object-cover object-center"
-                 src="https://images.pexels.com/photos/4497761/pexels-photo-4497761.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                 src="https://st4.depositphotos.com/17828278/24401/v/600/depositphotos_244011872-stock-illustration-image-vector-symbol-missing-available.jpg"
                  alt="">
         @endisset
     </figure>

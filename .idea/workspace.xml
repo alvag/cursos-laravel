@@ -4,8 +4,9 @@
     <list default="true" id="e5e5bd1f-e5c1-4df6-874e-423a0c9581eb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Instructor/CourseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Instructor/CourseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Instructor/CoursesIndex.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Instructor/CoursesIndex.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/instructor/courses/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/instructor/courses/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/instructor/courses/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/instructor/courses/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/instructor/courses/partials/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/instructor/courses/partials/form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/instructor/courses-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/instructor/courses-index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,7 +246,7 @@
       <workItem from="1608732839613" duration="2672000" />
       <workItem from="1608741112598" duration="11269000" />
       <workItem from="1609358358258" duration="628000" />
-      <workItem from="1609423293391" duration="21444000" />
+      <workItem from="1609423293391" duration="24159000" />
     </task>
     <servers />
   </component>

@@ -10,8 +10,10 @@ use App\Models\Price;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
 {
@@ -43,11 +45,31 @@ class CourseController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return Response
+     * @return RedirectResponse
      */
     public function store( Request $request )
     {
-        //
+        $request->validate( [
+            'title' => 'required',
+            'slug' => 'required|unique:courses',
+            'subtitle' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'level_id' => 'required',
+            'price_id' => 'required',
+        ] );
+
+        $course = Course::create( $request->all() );
+
+        if ( $request->file( 'file' ) ) {
+            $url = Storage::put( 'courses', $request->file( 'file' ) );
+
+            $course->image()->create( [
+                'url' => $url
+            ] );
+        }
+
+        return redirect()->route( 'instructor.courses.edit', $course->id );
     }
 
     /**
