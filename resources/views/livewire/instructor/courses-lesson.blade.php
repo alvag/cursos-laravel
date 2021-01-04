@@ -3,7 +3,7 @@
         <article class="card mt-4">
             <div class="card-body">
                 @if($lesson->id == $item->id)
-                    <div>
+                    <form wire:submit.prevent="update">
                         <div class="flex items-center">
                             <label class="w-32">Nombre:</label>
                             <input type="text" class="form-input w-full" wire:model="lesson.name">
@@ -33,10 +33,10 @@
                         @enderror
 
                         <div class="mt-4 flex justify-end">
-                            <button class="btn btn-danger mr-2 px-2" wire:click="cancel">Cancelar</button>
-                            <button class="btn btn-primary px-2" wire:click="update">Actualizar</button>
+                            <button type="button" class="btn btn-danger mr-2 px-2" wire:click="cancel">Cancelar</button>
+                            <button type="submit" class="btn btn-primary px-2">Actualizar</button>
                         </div>
-                    </div>
+                    </form>
                 @else
                     <header>
                         <h1>
@@ -56,6 +56,10 @@
                                 </button>
                                 <button class="btn btn-danger text-sm px-2" wire:click="destroy({{$item}})">Eliminar
                                 </button>
+                            </div>
+
+                            <div class="my-2">
+                                @livewire('instructor.lesson-description', ['lesson' => $item], key($item->id))
                             </div>
                         </div>
                     </header>
