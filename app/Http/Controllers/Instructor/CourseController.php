@@ -155,4 +155,11 @@ class CourseController extends Controller
     {
         //
     }
+
+    public function goals( $id )
+    {
+        $course = Course::findOrFail( $id );
+
+        return view( 'instructor.courses.goals', compact( 'course' ) );
+    }
 }

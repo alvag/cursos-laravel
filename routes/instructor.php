@@ -15,3 +15,4 @@ Route::redirect( '', 'instructor/cursos' );
 Route::resource( 'cursos', CourseController::class )->names( 'courses' );
 
 Route::get( 'cursos/{id}/curriculum', CourseCurriculum::class )->name( 'courses.curriculum' );
+Route::get( 'cursos/{id}/goals', [ CourseController::class, 'goals' ] )->name( 'courses.goals' );
