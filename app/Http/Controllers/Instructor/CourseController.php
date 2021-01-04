@@ -57,6 +57,7 @@ class CourseController extends Controller
             'category_id' => 'required',
             'level_id' => 'required',
             'price_id' => 'required',
+            'file' => 'image'
         ] );
 
         $course = Course::create( $request->all() );
@@ -102,12 +103,46 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param Request $request
-     * @param Course $course
-     * @return Response
+     * @param $id
+     * @return RedirectResponse
      */
-    public function update( Request $request, Course $course )
+    public function update( Request $request, $id ): RedirectResponse
     {
-        //
+        $course = Course::findOrFail( $id );
+
+        $request->validate( [
+            'title' => 'required',
+            'slug' => 'required|unique:courses,slug,' . $course->id,
+            'subtitle' => 'required',
+            'description' => 'required',
+            'category_id' => 'required',
+            'level_id' => 'required',
+            'price_id' => 'required',
+            'file' => 'image'
+        ] );
+
+        $course->update( $request->all() );
+
+        if ( $request->file( 'file' ) ) {
+            $url = Storage::put( 'courses', $request->file( 'file' ) );
+
+            if ( $course->image ) {
+                Storage::delete( $course->image->url );
+
+                $course->image()->update( [
+                    'url' => $url
+                ] );
+            } else {
+                $course->image()->create( [
+                    'url' => $url
+                ] );
+            }
+
+
+        }
+
+        return redirect()->route( 'instructor.courses.edit', $course->id );
+
     }
 
     /**

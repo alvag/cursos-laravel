@@ -69,6 +69,10 @@
             voluptates? Eaque, praesentium, unde. Dolore dolorem doloremque eius error id mollitia nulla
             odio quis? Minus, odit, reiciendis!</p>
 
-        {!! Form::file('file', ['class' => 'form-input w-full', 'id' => 'file']) !!}
+        {!! Form::file('file', ['class' => 'form-input w-full' . ($errors->has('file') ? ' border-red-600' : ''), 'id' => 'file', 'accept' => 'image/*']) !!}
+
+        @error('file')
+        <strong class="text-xs text-red-600">{{$message}}</strong>
+        @enderror
     </div>
 </div>
